@@ -1,0 +1,28 @@
+namespace = KingKarnaIR_AutoBuilding_event
+
+KingKarnaIR_AutoBuilding_event.1 = { type = province_event hidden = yes title = "KingKarnaIR_AutoBuilding_event.1" desc = "KingKarnaIR_AutoBuilding_event.1" picture = aqueducts left_portrait = current_ruler right_portrait = current_ruler
+option = { name = "KingKarnaIR_AutoBuilding_event.1" } trigger = { owner = { has_war_exhaustion <= 15 has_country_modifier = "KingKarnaIR_AutoBuilding_modifiers" } }
+immediate = {
+#free province investments#
+if = { limit = { owner = { has_variable = free_investments var:free_investments > 0 } } owner = { change_variable = { name = free_investments add = -1 } } random_list = { 25 = { trigger_event = { id = state_improvement.1 } add_state_modification_value_effect = yes } 25 = { trigger_event = { id = state_improvement.2 } add_state_modification_value_effect = yes } 25 = { trigger_event = { id = state_improvement.3 } add_state_modification_value_effect = yes } 25 = { trigger_event = { id = state_improvement.4 } add_state_modification_value_effect = yes } } }
+#road#
+if = { limit = { owner = { treasury >= 50 } any_neighbor_province = { NOT = { is_sea = yes has_road_towards = ROOT } } } owner = { add_treasury = -50 } random_neighbor_province = { limit = { NOT = { is_sea = yes has_road_towards = ROOT } } add_road_towards = ROOT } }
+#max amount buildings for base game#
+if = { limit = { owner = { treasury >= 150 } free_building_slots > 0 can_build_building = port_building } owner = { add_treasury = -150 } add_building_level = port_building }
+if = { limit = { owner = { treasury >= 150 } free_building_slots > 0 can_build_building = fortress_ramparts_building } owner = { add_treasury = -150 } add_building_level = fortress_ramparts_building }
+if = { limit = { owner = { treasury >= 200 } free_building_slots > 0 can_build_building = barracks_building } owner = { add_treasury = -200 } add_building_level = barracks_building }
+if = { limit = { owner = { treasury >= 300 } free_building_slots > 0 can_build_building = foundry_building } owner = { add_treasury = -300 } add_building_level = foundry_building }
+if = { limit = { owner = { treasury >= 300 } free_building_slots > 0 can_build_building = temple_building } owner = { add_treasury = -300 } add_building_level = temple_building }
+if = { limit = { owner = { treasury >= 300 } free_building_slots > 0 can_build_building = theathre_building } owner = { add_treasury = -300 } add_building_level = theathre_building }
+if = { limit = { owner = { treasury >= 150 } free_building_slots > 0 can_build_building = academy_building } owner = { add_treasury = -150 } add_building_level = academy_building } 
+if = { limit = { owner = { treasury >= 150 } free_building_slots > 0 can_build_building = court_building } owner = { add_treasury = -150 } add_building_level = court_building }
+if = { limit = { owner = { treasury >= 150 } free_building_slots > 0 can_build_building = forum_building } owner = { add_treasury = -150 } add_building_level = forum_building }
+if = { limit = { owner = { treasury >= 200 } free_building_slots > 0 can_build_building = latifundia_building } owner = { add_treasury = -200 } add_building_level = latifundia_building }
+if = { limit = { owner = { treasury >= 200 } free_building_slots > 0 can_build_building = slave_mine_building } owner = { add_treasury = -200 } add_building_level = slave_mine_building }
+if = { limit = { owner = { treasury >= 200 } free_building_slots > 0 can_build_building = basic_settlement_infratructure_building } owner = { add_treasury = -200 } add_building_level = basic_settlement_infratructure_building } 
+if = { limit = { owner = { treasury >= 200 } free_building_slots > 0 can_build_building = local_forum_building } owner = { add_treasury = -200 } add_building_level = local_forum_building }
+if = { limit = { owner = { treasury >= 150 } free_building_slots > 0 can_build_building = workshop_building } owner = { add_treasury = -150 } add_building_level = workshop_building }
+if = { limit = { owner = { treasury >= 200 } free_building_slots > 0 can_build_building = hill_fort } owner = { add_treasury = -200 } add_building_level = hill_fort }
+#other buildings for base game#
+if = { limit = { owner = { treasury >= 100 } free_building_slots > 0 } random_list = { 1 = { owner = { add_treasury = -100 } add_building_level = commerce_building } 1 = { owner = { add_treasury = -100 } add_building_level = military_building } 1 = { owner = { add_treasury = -100 } add_building_level = town_hall_building } 1 = { owner = { add_treasury = -100 } add_building_level = library_building } 1 = { owner = { add_treasury = -100 } add_building_level = population_building } 1 = { owner = { add_treasury = -150 } add_building_level = aqueduct_building } }
+} }
