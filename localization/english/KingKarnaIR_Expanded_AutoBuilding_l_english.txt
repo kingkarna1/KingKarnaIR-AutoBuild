@@ -1,0 +1,3 @@
+l_english:
+ KingKarnaIR_AutoBuilding_event.1.desc:1 "null"
+ KingKarnaIR_AutoBuilding_event.1:1 "null"
