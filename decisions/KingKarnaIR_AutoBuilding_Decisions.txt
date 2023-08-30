@@ -1,9 +1,0 @@
-country_decisions = {
-
-KingKarnaIR_AutoBuilding_Decisions1 = { potential = { NOT = { has_country_modifier = "KingKarnaIR_AutoBuilding_modifiers" } } allow = { NOT = { has_country_modifier = "KingKarnaIR_AutoBuilding_modifiers" } } 
-effect = { add_country_modifier = { name = "KingKarnaIR_AutoBuilding_modifiers" duration = -1 } } ai_will_do = { factor = 1000 } }
-
-KingKarnaIR_AutoBuilding_Decisions2 = { potential = { AND = { has_country_modifier = "KingKarnaIR_AutoBuilding_modifiers" } } allow = { AND = { has_country_modifier = "KingKarnaIR_AutoBuilding_modifiers" } } 
-effect = { remove_country_modifier = "KingKarnaIR_AutoBuilding_modifiers" } ai_will_do = { factor = 0 } }
-
-}
