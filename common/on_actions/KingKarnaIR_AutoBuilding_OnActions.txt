@@ -1,1 +1,0 @@
-monthly_province_pulse = { events = { KingKarnaIR_AutoBuilding_event.1 } }
